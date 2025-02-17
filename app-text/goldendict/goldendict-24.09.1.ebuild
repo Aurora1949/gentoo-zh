@@ -13,7 +13,9 @@ MY_PV="24.09.1-Release.ca9dd133"
 
 DESCRIPTION="Feature-rich dictionary lookup program (qtwebengine fork)"
 HOMEPAGE="https://xiaoyifang.github.io/goldendict-ng/"
-SRC_URI="https://github.com/xiaoyifang/goldendict-ng/archive/v${MY_PV}.tar.gz"
+SRC_URI="
+	https://github.com/xiaoyifang/goldendict-ng/archive/v${MY_PV}.tar.gz -> ${PN}-${MY_PV}.tar.gz
+"
 
 S="${WORKDIR}/goldendict-ng-${MY_PV}"
 LICENSE="
@@ -40,6 +42,7 @@ DEPEND="
 	dev-qt/qtdeclarative:6
 	dev-qt/qtsvg:6
 	dev-qt/qtwebengine:6[widgets]
+	epwing? ( dev-libs/eb )
 	ffmpeg? (
 		media-libs/libao
 		media-video/ffmpeg:*

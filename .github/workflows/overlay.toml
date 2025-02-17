@@ -2,6 +2,20 @@
 oldver = "old_ver.json"
 newver = "new_ver.json"
 
+["app-admin/chezmoi"]
+source = "github"
+github = "twpayne/chezmoi"
+use_latest_tag = true
+prefix = "v"
+github_account = "tsln1998"
+
+["app-admin/chezmoi-bin"]
+source = "github"
+github = "twpayne/chezmoi"
+use_latest_release = true
+prefix = "v"
+github_account = "tsln1998"
+
 ["app-admin/enpass"]
 source = "regex"
 url = "https://apt.enpass.io/dists/stable/main/binary-amd64/Packages"
@@ -234,9 +248,6 @@ debianpkg = "lunar"
 from_pattern = "-(\\d+)"
 to_pattern = ""
 github_account = "liangyongxiang"
-
-# TODO: only old data tag
-#["app-i18n/mozc"]
 
 ["app-i18n/zh-autoconvert"]
 source = "debianpkg"
@@ -659,12 +670,6 @@ strip_release = true
 # TODO: need filter mamba- prefix
 #["dev-util/mamba"]
 
-["dev-util/mongodb-compass-bin"]
-source = "github"
-github = "mongodb-js/compass"
-use_latest_release = true
-prefix = "v"
-
 ["dev-util/pacstrap"]
 source = "gitlab"
 host = "gitlab.archlinux.org"
@@ -687,12 +692,19 @@ github = "bensadeh/tailspin"
 use_latest_release = true
 github_account = "liangyongxiang"
 
-["dev-util/tauri-cli"]
+["dev-util/vfox"]
 source = "github"
-github = "tauri-apps/tauri"
+github = "version-fox/vfox"
 use_latest_tag = true
-prefix = "cli.rs-v"
-github_account = "123485k"
+prefix = "v"
+github_account = "tsln1998"
+
+["dev-util/vfox-bin"]
+source = "github"
+github = "version-fox/vfox"
+use_latest_release = true
+prefix = "v"
+github_account = "tsln1998"
 
 ["dev-util/zprint-bin"]
 source = "github"
@@ -1004,6 +1016,7 @@ use_latest_release = true
 prefix = "v"
 from_pattern = "(.*)-(.*)"
 to_pattern = '\1_p\2'
+github_account = "peeweep"
 
 ["media-video/implay"]
 source = "github"
@@ -1150,6 +1163,13 @@ use_latest_release = true
 prefix = "v"
 github_account = "123485k"
 
+["net-misc/another-redis-desktop-manager-bin"]
+source = "github"
+github = "qishibo/AnotherRedisDesktopManager"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+
 # TODO: upstream no tags
 #["net-misc/apifox"]
 
@@ -1278,6 +1298,12 @@ github_action = "OriPoin"
 # TODO: upstream no tags
 #["net-print/epson-inkjet-printer_201207w"]
 
+["net-proxy/bore"]
+source = "github"
+github = "ekzhang/bore"
+use_latest_release = true
+prefix = "v"
+
 ["net-proxy/cgproxy"]
 source = "github"
 github = "springzfx/cgproxy"
@@ -1369,6 +1395,14 @@ github_account = "blackteahamburger"
 #prefix = "v"
 #github_account = "Jackarain"
 
+["net-proxy/serenity"]
+source = "github"
+github = "SagerNet/serenity"
+use_latest_tag = true
+from_pattern = '^v?(\d+\.\d+\.\d+)-(.+)\.(\d+)$'
+to_pattern = '\1_\2\3'
+github_account = "peeweep"
+
 ["net-proxy/shadowsocks-rust"]
 source = "github"
 github = "shadowsocks/shadowsocks-rust"
@@ -1381,7 +1415,7 @@ source = "github"
 github = "SagerNet/sing-box"
 use_latest_release = true
 prefix = "v"
-github_account = ["Puqns67"]
+github_account = ["Puqns67", "peeweep"]
 
 ["net-proxy/smartproxy"]
 source = "github"
@@ -1494,6 +1528,13 @@ prefix = "v"
 # live package only
 #["sys-apps/mdp"]
 
+["sys-apps/isd"]
+source = "github"
+github = "isd-project/isd"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+
 ["sys-apps/pacman"]
 source = "gitlab"
 host = "gitlab.archlinux.org"
@@ -1595,25 +1636,18 @@ use_latest_tag = true
 prefix = "tlpui-"
 github_account = "xz-dev"
 
-["www-apps/chatgpt-desktop"]
+["www-apps/cherry-studio-bin"]
 source = "github"
-github = "lencx/ChatGPT"
+github = "CherryHQ/cherry-studio"
 use_latest_release = true
-github_account = "oatiz"
 prefix = "v"
+github_account = "gouwazi"
 
 ["www-apps/follow-bin"]
 source = "github"
 github = "RSSNext/Follow"
 use_latest_release = true
-from_pattern = '^v?(\d+\.\d+\.\d+)-(.+)\.(\d+)$'
-to_pattern = '\1_\2\3'
-github_account = "peeweep"
-
-["www-apps/lzc-client-desktop"]
-source = "regex"
-url = "https://dl.lazycat.cloud/client/desktop/lzc-client-desktop.tar.zst.metadata.json"
-regex = 'v(.*)"'
+prefix = 'v'
 github_account = "peeweep"
 
 ["www-client/brave-bin"]
@@ -1622,6 +1656,13 @@ github = "brave/brave-browser"
 use_latest_release = true
 github_account = "irort"
 prefix = "v"
+
+["www-client/thorium-browser-bin"]
+source = "github"
+github = "Alex313031/thorium"
+use_latest_release = true
+prefix = "M"
+github_account = "blackteahamburger"
 
 ["www-servers/darkhttpd"]
 source = "github"
